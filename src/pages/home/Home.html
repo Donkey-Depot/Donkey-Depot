@@ -5,55 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
     color: #f3f4f6;
+    background: #081a33;
+}
+
+section {
+    min-height: 100vh;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
     background:
         radial-gradient(circle at top left, rgba(0,180,120,.25), transparent 35%),
         linear-gradient(135deg, #081a33, #0d3b2d);
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
     display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-nav img {
-    height: 40px;
+    gap: 1rem;
+    background: rgba(8, 26, 51, 0.7);
+    backdrop-filter: blur(8px);
 }
 
 nav a {
-    color: #f3f4f6;
+    color: #fff;
     text-decoration: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background: #16a085;
     color: #fff;
     cursor: pointer;
-}
-
-.timeline {
-    margin: 30px 0;
-    padding-left: 20px;
-    border-left: 3px solid #16a085;
-}
-
-.Ms {
-    margin-bottom: 20px;
-}
-
-h1, h2, h3, h5 {
-    color: #ffffff;
 }
 </style>
 </head>
