@@ -5,7 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f3f4f6;
+    background: #081a33;
+}
 
+section {
+    min-height: 100vh;
+    padding: 6rem 4rem 4rem; /* extra top padding for the fixed nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.hero {
+    background:
+        radial-gradient(circle at top left, rgba(0,180,120,.25), transparent 35%),
+        linear-gradient(135deg, #081a33, #0d3b2d);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(8,26,51,.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: #16a085;
+    color: #fff;
+    cursor: pointer;
+}
+
+.timeline {
+    border-left: 3px solid #16a085;
+    padding-left: 1.5rem;
+}
+
+.Ms {
+    margin-bottom: 2rem;
+}
 </style>
 </head>
 <body>
