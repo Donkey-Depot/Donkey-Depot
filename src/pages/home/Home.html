@@ -1,23 +1,123 @@
-<nav>...</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f3f4f6;
+    background: #081a33;
+}
 
-<section class="hero">
-    <h1>DONKEY DEPOT</h1>
-    <button>Join the Movement</button>
-    <p>…</p>
-</section>
+section {
+    min-height: 100vh;
+    padding: 6rem 4rem 4rem; /* extra top padding for the fixed nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
 
-<section class="timeline-section">
-    <div class="timeline">
-        …
-    </div>
-</section>
+.hero {
+    background:
+        radial-gradient(circle at top left, rgba(0,180,120,.25), transparent 35%),
+        linear-gradient(135deg, #081a33, #0d3b2d);
+}
 
-<section class="join-us">
-    <h3>Join our movement now</h3>
-    <p>…</p>
-    <button>Join the Waitlist</button>
-</section>
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(8,26,51,.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
 
-<script>
-    // Your JavaScript goes here.
-</script>
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+nav img {
+    height: 50px;
+    width: auto;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: #16a085;
+    color: #fff;
+    cursor: pointer;
+}
+
+.timeline {
+    border-left: 3px solid #16a085;
+    padding-left: 1.5rem;
+}
+
+.Ms {
+    margin-bottom: 2rem;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <img src="../../assets/images/logo.png" alt="Donkey Depot logo">
+        <span>Donkey Depot</span>
+        <a href="Home.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <section class="hero">
+        <h1>DONKEY DEPOT</h1>
+        <button>Join the Movement</button>
+
+        <p>
+            <strong>The Challenge.</strong>
+            Communities in and around Juja face a growing waste management challenge. Valuable organic and recyclable materials are too often discarded, limiting environmental progress and the creation of green economic opportunities.
+        </p>
+
+        <p>
+            <strong>Our Solution.</strong>
+            Donkey Depot is building a circular economy ecosystem that combines innovative technology with local action. Through the EcoLoop platform and future waste-to-resource initiatives, we aim to transform discarded materials into sustainable products, empower communities, and make responsible resource management simple and rewarding for everyone.
+        </p>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline">
+            <div class="Ms">
+                <h2>The Company First Idea (2024)</h2>
+            </div>
+            <div class="Ms">
+                <h2>The Company Website Creation</h2>
+            </div>
+            <div class="Ms">
+                <h2>EcoLoop App Launch</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-us">
+        <h3>Join Our Movement Now</h3>
+        <p>
+            Join the waitlist for EcoLoop and stay informed about future opportunities with Donkey Depot.
+        </p>
+        <button>Join the Waitlist</button>
+    </section>
+
+    <script>
+    </script>
+</body>
+</html>
+</html>
