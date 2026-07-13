@@ -3,214 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Donkey Depot</title>
     <style>
     body {
-    margin: 0;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    color: #f3f4f6;
-    background: #081a33;
-    line-height: 1.6;
-}
+        margin: 0;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        color: #f3f4f6;
+        background: #081a33;
+        line-height: 1.6;
+    }
 
-section {
-    min-height: 100vh;
-    padding: 7rem 2rem 4rem; /* comfortable spacing with fixed nav */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero {
-    background:
-        radial-gradient(circle at top left, rgba(0,180,120,.25), transparent 35%),
-        linear-gradient(135deg, #081a33, #0d3b2d);
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-}
-
-/* The original HTML has a rogue <h1> inside <p>.
-   Browsers will close the <p> automatically, so we style the orphan <h1> directly.
-   For a better result, the markup should be cleaned up – but CSS can still help. */
-.hero p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    color: #d1d5db;
-}
-
-.hero strong {
-    display: block;
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
-    color: #fff;
-}
-
-/* The second "h1" inside hero (originally inside <p>) will be rendered after the paragraph closes.
-   We hide it or make it look like a subtitle, because a page shouldn't have two <h1>s */
-.hero h1:last-of-type {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #9ca3af;
-    margin-top: -1rem;  /* pull it close to the text above */
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0.8rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    background: rgba(8,26,51,0.85);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(22,160,133,0.2);
-    flex-wrap: wrap;
-}
-
-nav img {
-    height: 45px;
-    width: auto;
-}
-
-nav span {
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: -0.3px;
-    margin-right: auto;
-}
-
-nav a {
-    color: #e5e7eb;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    transition: background 0.2s, color 0.2s;
-}
-
-nav a:hover {
-    background: rgba(22,160,133,0.15);
-    color: #16a085;
-}
-
-button {
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #16a085, #0f7a62);
-    color: #fff;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 14px rgba(22,160,133,0.3);
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(22,160,133,0.5);
-}
-
-.timeline-section {
-    background: #0a1f3a;
-}
-
-.timeline {
-    border-left: 4px solid #16a085;
-    padding-left: 2rem;
-    position: relative;
-}
-
-.Ms {
-    margin-bottom: 2.5rem;
-    position: relative;
-    padding-left: 2rem;
-}
-
-.Ms::before {
-    content: '';
-    position: absolute;
-    left: -0.65rem;
-    top: 0.25rem;
-    width: 1rem;
-    height: 1rem;
-    background: #16a085;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(22,160,133,0.2);
-}
-
-.Ms h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #f3f4f6;
-    margin: 0;
-}
-
-.join-us {
-    text-align: center;
-    background: linear-gradient(180deg, #0a1f3a, #081a33);
-}
-
-.join-us h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.join-us p {
-    max-width: 500px;
-    margin: 0 auto 1.5rem;
-    color: #d1d5db;
-}
-
-.join-us a {
-    display: inline-block;
-    text-decoration: none;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
     section {
-        padding: 6rem 1.5rem 3rem;
-    }
-
-    nav {
+        min-height: 100vh;
+        padding: 7rem 2rem 4rem;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        justify-content: center;
+        box-sizing: border-box;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    nav a {
-        margin-right: 0;
+    .hero {
+        background:
+            radial-gradient(circle at top left, rgba(0,180,120,.25), transparent 35%),
+            linear-gradient(135deg, #081a33, #0d3b2d);
+        text-align: center;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
     }
 
-    .Ms {
-        padding-left: 1.5rem;
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        color: #d1d5db;
     }
-}
-        </style>
+
+    .hero strong {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        color: #fff;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0.8rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        background: rgba(8,26,51,0.85);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(22,160,133,0.2);
+        flex-wrap: wrap;
+    }
+
+    nav img {
+        height: 45px;
+        width: auto;
+    }
+
+    nav span {
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: -0.3px;
+        margin-right: auto;
+    }
+
+    nav a {
+        color: #e5e7eb;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+        background: rgba(22,160,133,0.15);
+        color: #16a085;
+    }
+
+    button {
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #16a085, #0f7a62);
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 14px rgba(22,160,133,0.3);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(22,160,133,0.5);
+    }
+
+    /* ===== NEW HORIZONTAL TIMELINE ===== */
+    .timeline-section {
+        background: #0a1f3a;
+        justify-content: center;
+        min-height: 60vh;
+    }
+
+    .timeline-horizontal {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        padding-top: 2.5rem;
+        margin: 0 1rem;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .timeline-horizontal::before {
+        content: '';
+        position: absolute;
+        top: 1.2rem;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #16a085, #0f7a62, #16a085);
+        border-radius: 2px;
+        box-shadow: 0 0 10px rgba(22,160,133,0.3);
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+        cursor: default;
+    }
+
+    .timeline-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .timeline-item .dot {
+        width: 20px;
+        height: 20px;
+        background: #16a085;
+        border-radius: 50%;
+        border: 5px solid #0a1f3a;
+        box-shadow: 0 0 0 4px rgba(22, 160, 133, 0.2), 0 0 15px rgba(22,160,133,0.2);
+        margin-bottom: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover .dot {
+        background: #1abc9c;
+        transform: scale(1.2);
+        box-shadow: 0 0 0 6px rgba(22, 160, 133, 0.3), 0 0 25px #16a085;
+    }
+
+    .timeline-item .content {
+        text-align: center;
+    }
+
+    .timeline-item .content h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #f3f4f6;
+        margin: 0 0 0.3rem 0;
+        letter-spacing: -0.3px;
+    }
+
+    .timeline-item .content p {
+        font-size: 0.85rem;
+        color: #9ca3af;
+        margin: 0;
+        max-width: 180px;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        section {
+            padding: 6rem 1.5rem 3rem;
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .timeline-horizontal {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 2rem;
+            padding-top: 0;
+            margin: 0;
+            gap: 2rem;
+        }
+
+        .timeline-horizontal::before {
+            top: 0;
+            bottom: 0;
+            left: 0.8rem;
+            right: auto;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #16a085, #0f7a62);
+        }
+
+        .timeline-item {
+            flex-direction: row;
+            width: 100%;
+            gap: 1.5rem;
+            align-items: center;
+            transform: none !important;
+        }
+
+        .timeline-item .dot {
+            margin-bottom: 0;
+            width: 16px;
+            height: 16px;
+            border: 4px solid #0a1f3a;
+            flex-shrink: 0;
+        }
+
+        .timeline-item .content {
+            text-align: left;
+        }
+
+        .timeline-item .content p {
+            max-width: 100%;
+        }
+    }
+    /* ===== END NEW TIMELINE ===== */
+
+    .join-us {
+        text-align: center;
+        background: linear-gradient(180deg, #0a1f3a, #081a33);
+    }
+
+    .join-us h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .join-us p {
+        max-width: 500px;
+        margin: 0 auto 1.5rem;
+        color: #d1d5db;
+    }
+
+    .join-us a {
+        display: inline-block;
+        text-decoration: none;
+    }
+    </style>
 </head>
 <body>
     <nav>
@@ -224,42 +290,57 @@ button:hover {
 
     <section class="hero">
         <h1>DONKEY DEPOT, The Future of Circular Economy in Juja. We are building the infrastructure to transform waste into sustainable resources.</h1>
+        <p><strong>The Problem & Our Solution</strong></p>
         <p>
-            <strong>The Problem & Our Solution</strong>
-            <h1> A clean, bold section highlighting the local waste challenge and introducing Donkey Depot’s incoming two-pronged approach: Tech (EcoLoop) + Physical Action (Manufacturing).
-            Communities in and around Juja face a growing waste management challenge. Valuable organic and recyclable materials are too often discarded, limiting environmental progress and the creation of green economic opportunities.
-            </h1>
+            A clean, bold section highlighting the local waste challenge and introducing Donkey Depot’s incoming two-pronged approach: Tech (EcoLoop) + Physical Action (Manufacturing). Communities in and around Juja face a growing waste management challenge. Valuable organic and recyclable materials are too often discarded, limiting environmental progress and the creation of green economic opportunities.
         </p>
         <button onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
-         Join the Movement</button>
-            
+            Join the Movement
+        </button>
     </section>
 
+    <!-- ===== HORIZONTAL TIMELINE WITH 4 PHASES ===== -->
     <section class="timeline-section">
-        <div class="timeline">
-            <div class="Ms">
-                <h2>Phase 1: Ecosystem Design</h2>
+        <div class="timeline-horizontal">
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <div class="content">
+                    <h3>Phase 1</h3>
+                    <p>Ecosystem Design & Research</p>
+                </div>
             </div>
-            <div class="Ms">
-                <h2>Phase 2: EcoLoop Rebuild & Beta Testing</h2>
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <div class="content">
+                    <h3>Phase 2</h3>
+                    <p>EcoLoop Rebuild & Beta Testing</p>
+                </div>
             </div>
-            <div class="Ms">
-                <h2>Phase 3: Local Collection & Pilot Launch</h2>
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <div class="content">
+                    <h3>Phase 3</h3>
+                    <p>Local Collection & Pilot Launch</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <div class="content">
+                    <h3>Phase 4</h3>
+                    <p>Scaling & Impact Expansion</p>
+                </div>
             </div>
         </div>
     </section>
+
     <section id="waitlist" class="join-us">
         <h3>Join Our Movement Now</h3>
         <p>
             Join the waitlist for EcoLoop and stay informed about future opportunities with Donkey Depot.
         </p>
         <a href="https://forms.gle/9x333Luk6AfXwhP78" target="_blank">
-    <button>Join the Waitlist</button>
+            <button>Join the Waitlist</button>
         </a>
     </section>
-
-    <script>
-    </script>
 </body>
-</html>
 </html>
