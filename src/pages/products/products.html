@@ -3,7 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>/style>
+    <style>/* ================= PRODUCTS PAGE ================= */
+
+.container{
+    width:100%;
+}
+
+#products-hero{
+    text-align:center;
+}
+
+#products-hero h1{
+    font-size:clamp(2.5rem,6vw,4rem);
+    font-weight:800;
+    margin-bottom:1rem;
+}
+
+#products-hero p{
+    max-width:750px;
+    margin:0 auto 2rem;
+    color:#cbd5e1;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.hero-buttons a{
+    display:inline-block;
+    text-decoration:none;
+    color:#fff;
+    padding:14px 30px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#16a085,#0f7a62);
+    transition:.3s;
+    box-shadow:0 4px 14px rgba(22,160,133,.3);
+}
+
+.hero-buttons a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 24px rgba(22,160,133,.45);
+}
+
+/* ================= ECOSYSTEM ================= */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+    margin-top:3rem;
+}
+
+.step{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.step:hover{
+    transform:translateY(-8px);
+    border-color:#16a085;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.step h3{
+    margin:0 0 .8rem;
+}
+
+.step p{
+    color:#cbd5e1;
+    margin:0;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:3rem;
+}
+
+.product-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:35px;
+    transition:.35s;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+    border-color:#16a085;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.product-card h3{
+    margin-top:0;
+}
+
+.product-card p{
+    color:#cbd5e1;
+}
+
+.product-card ul{
+    padding-left:20px;
+    margin-top:20px;
+}
+
+.product-card li{
+    margin-bottom:10px;
+}
+
+.product-card span{
+    display:inline-block;
+    margin-top:20px;
+    padding:8px 18px;
+    background:#16a085;
+    border-radius:30px;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+/* ================= BUILT FOR ================= */
+
+.solution-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:3rem;
+}
+
+.solution-grid article{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.3s;
+}
+
+.solution-grid article:hover{
+    transform:translateY(-8px);
+    border-color:#16a085;
+}
+
+.solution-grid p{
+    color:#cbd5e1;
+}
+
+/* ================= PIPELINE ================= */
+
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+    margin-top:3rem;
+}
+
+.timeline div{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.timeline div:hover{
+    transform:translateY(-6px);
+    border-color:#16a085;
+}
+
+/* ================= COMPARISON ================= */
+
+.comparison{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:3rem;
+}
+
+.comparison div{
+    background:rgba(255,255,255,.05);
+    border-radius:20px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.comparison ul{
+    padding-left:20px;
+}
+
+.comparison li{
+    margin-bottom:12px;
+}
+
+/* ================= PARTNER ================= */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-width:700px;
+    margin:3rem auto 0;
+}
+
+input,
+textarea{
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:18px;
+    font-size:1rem;
+    outline:none;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#9ca3af;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#16a085;
+}
+
+textarea{
+    min-height:170px;
+    resize:vertical;
+}
+
+form button{
+    align-self:center;
+}
+
+/* ================= FINAL CTA ================= */
+
+#final-cta{
+    text-align:center;
+}
+
+#final-cta h2{
+    font-size:2rem;
+}
+
+#final-cta h1{
+    font-size:clamp(3rem,6vw,5rem);
+    margin:.5rem 0 1rem;
+}
+
+#final-cta p{
+    max-width:650px;
+    margin:0 auto 2rem;
+    color:#cbd5e1;
+}
+
+#final-cta a{
+    display:inline-block;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#16a085,#0f7a62);
+    padding:16px 36px;
+    border-radius:35px;
+    transition:.3s;
+}
+
+#final-cta a:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(22,160,133,.4);
+}
+
+@media(max-width:768px){
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .products,
+    .flow,
+    .solution-grid,
+    .timeline,
+    .comparison{
+        grid-template-columns:1fr;
+    }
+
+}</style>
 </head>
 <body>
     <section id="products-hero">
