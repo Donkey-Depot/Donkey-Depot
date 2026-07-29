@@ -509,6 +509,501 @@ transform:translateY(0);
 }
 
     }
+/* ==========================================================
+   TIMELINE SECTION
+========================================================== */
+
+.timeline-section{
+
+position:relative;
+
+padding:140px 0;
+
+background:
+
+linear-gradient(
+180deg,
+#0a1f3a,
+#081a33);
+
+border-radius:32px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+/* subtle glow */
+
+.timeline-section::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+
+height:600px;
+
+background:
+
+rgba(22,160,133,.08);
+
+filter:blur(120px);
+
+top:-250px;
+
+right:-250px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+}
+
+.timeline-title{
+
+text-align:center;
+
+margin-bottom:80px;
+
+}
+
+.timeline-title h2{
+
+font-size:clamp(2rem,5vw,3.4rem);
+
+font-weight:800;
+
+letter-spacing:-1px;
+
+margin-bottom:16px;
+
+}
+
+.timeline-title p{
+
+max-width:720px;
+
+margin:auto;
+
+color:var(--muted);
+
+font-size:1.1rem;
+
+}
+
+/* ==========================================================
+TIMELINE
+========================================================== */
+
+.timeline-horizontal{
+
+position:relative;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+gap:30px;
+
+width:100%;
+
+margin:auto;
+
+padding-top:70px;
+
+}
+
+/* Progress line */
+
+.timeline-horizontal::before{
+
+content:"";
+
+position:absolute;
+
+left:5%;
+
+right:5%;
+
+top:38px;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+var(--primary),
+var(--primary-light),
+var(--primary));
+
+border-radius:999px;
+
+box-shadow:
+
+0 0 20px rgba(22,160,133,.35);
+
+}
+
+/* ==========================================================
+CARD
+========================================================== */
+
+.timeline-item{
+
+flex:1;
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+transition:var(--transition);
+
+}
+
+.timeline-item:hover{
+
+transform:
+
+translateY(-10px);
+
+}
+
+/* DOT */
+
+.timeline-item .dot{
+
+width:24px;
+
+height:24px;
+
+border-radius:50%;
+
+background:
+
+linear-gradient(
+135deg,
+var(--primary),
+var(--primary-light));
+
+border:6px solid #081a33;
+
+box-shadow:
+
+0 0 0 6px rgba(22,160,133,.15),
+
+0 0 30px rgba(22,160,133,.4);
+
+margin-bottom:30px;
+
+transition:var(--transition);
+
+z-index:3;
+
+}
+
+.timeline-item:hover .dot{
+
+transform:scale(1.25);
+
+box-shadow:
+
+0 0 0 8px rgba(22,160,133,.2),
+
+0 0 45px rgba(22,160,133,.6);
+
+}
+
+/* ==========================================================
+CONTENT CARD
+========================================================== */
+
+.timeline-item .content{
+
+width:100%;
+
+padding:28px;
+
+background:
+
+rgba(255,255,255,.04);
+
+backdrop-filter:blur(18px);
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.25);
+
+transition:var(--transition);
+
+text-align:center;
+
+}
+
+.timeline-item:hover .content{
+
+background:
+
+rgba(22,160,133,.08);
+
+border-color:
+
+rgba(22,160,133,.35);
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+PHASE NUMBER
+========================================================== */
+
+.phase{
+
+display:inline-block;
+
+margin-bottom:14px;
+
+padding:6px 12px;
+
+background:
+
+rgba(22,160,133,.12);
+
+border-radius:999px;
+
+font-size:.75rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:var(--primary-light);
+
+text-transform:uppercase;
+
+}
+
+/* ==========================================================
+HEADINGS
+========================================================== */
+
+.timeline-item h3{
+
+font-size:1.25rem;
+
+font-weight:700;
+
+margin-bottom:14px;
+
+letter-spacing:-.5px;
+
+}
+
+.timeline-item p{
+
+color:var(--gray);
+
+font-size:.96rem;
+
+line-height:1.7;
+
+}
+
+/* ==========================================================
+OPTIONAL ICON
+========================================================== */
+
+.timeline-icon{
+
+width:60px;
+
+height:60px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:0 auto 20px;
+
+border-radius:18px;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(22,160,133,.15),
+rgba(26,188,156,.08));
+
+font-size:1.5rem;
+
+}
+
+/* ==========================================================
+ACTIVE PHASE
+========================================================== */
+
+.timeline-item.active .content{
+
+background:
+
+linear-gradient(
+180deg,
+rgba(22,160,133,.18),
+rgba(22,160,133,.08));
+
+border-color:
+
+rgba(22,160,133,.45);
+
+}
+
+.timeline-item.active .dot{
+
+animation:
+
+pulse 2.5s infinite;
+
+}
+
+/* ==========================================================
+PULSE
+========================================================== */
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:
+
+0 0 0 0 rgba(22,160,133,.5);
+
+}
+
+70%{
+
+box-shadow:
+
+0 0 0 18px rgba(22,160,133,0);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 0 0 rgba(22,160,133,0);
+
+}
+
+}
+
+/* ==========================================================
+TABLET
+========================================================== */
+
+@media(max-width:992px){
+
+.timeline-horizontal{
+
+gap:18px;
+
+}
+
+.timeline-item .content{
+
+padding:22px;
+
+}
+
+.timeline-item h3{
+
+font-size:1.05rem;
+
+}
+
+}
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+.timeline-horizontal{
+
+display:flex;
+
+flex-direction:column;
+
+padding-top:0;
+
+gap:35px;
+
+}
+
+.timeline-horizontal::before{
+
+top:0;
+
+left:22px;
+
+width:4px;
+
+height:100%;
+
+right:auto;
+
+}
+
+.timeline-item{
+
+flex-direction:row;
+
+align-items:flex-start;
+
+gap:24px;
+
+width:100%;
+
+}
+
+.timeline-item .dot{
+
+margin-bottom:0;
+
+margin-top:8px;
+
+flex-shrink:0;
+
+}
+
+.timeline-item .content{
+
+text-align:left;
+
+}
+
+}
         </style>
 </head>
 <body>
