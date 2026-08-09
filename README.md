@@ -15,7 +15,7 @@ The official launch website for Donkey Depot, showcasing our vision for a circul
 - Vercel for hosting and deployment
 
 ## Getting Started
-Clone the repository and open `src/index.html` in your browser, or deploy the project using Vercel for the full experience.
+Clone the repository and open `index.html` in your browser, or deploy the project using Vercel for the full experience.
 
 ## License
 This project is licensed under the terms of the included LICENSE file.
