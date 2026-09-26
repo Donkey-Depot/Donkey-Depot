@@ -1,3 +1,6 @@
+/* =========================
+   RESET
+   ========================= */
 
 * {
     margin: 0;
@@ -25,6 +28,7 @@ nav {
     width: 100%;
     min-height: 80px;
     padding: 15px 7%;
+
     display: flex;
     align-items: center;
     gap: 25px;
@@ -47,12 +51,14 @@ nav span {
     font-size: 1.35rem;
     font-weight: 800;
     color: #1c542d;
+
     margin-right: auto;
 }
 
 nav a {
     color: #26372a;
     text-decoration: none;
+
     font-size: 0.95rem;
     font-weight: 600;
 
@@ -68,10 +74,13 @@ nav a:hover {
 }
 
 
+/* =========================
+   HERO / OUR MISSION
+   ========================= */
 
-.hero {
-    min-height: 650px;
-    padding: 100px 10%;
+.Hero {
+    min-height: 500px;
+    padding: 90px 10%;
 
     display: flex;
     flex-direction: column;
@@ -88,172 +97,166 @@ nav a:hover {
     color: white;
 }
 
-.hero h1 {
-    max-width: 1000px;
+.Hero h2 {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 1.1;
 
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
-    line-height: 1.08;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
-.hero > p:first-of-type {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.hero > p:nth-of-type(2) {
+.Hero p {
     max-width: 850px;
 
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     line-height: 1.8;
 
     color: #e6f1e8;
-    margin-bottom: 35px;
 }
 
 
+/* =========================
+   TEAM SECTION
+   ========================= */
 
-button {
-    border: none;
-    cursor: pointer;
-
-    padding: 15px 28px;
-
-    border-radius: 10px;
-
-    background: #b8e986;
-    color: #16351f;
-
-    font-size: 1rem;
-    font-weight: 800;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-}
-
-button:hover {
-    background: #d1f5ae;
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-}
-
-button:active {
-    transform: translateY(0);
-}
-
-
-
-
-.timeline-section {
+.team {
     padding: 100px 7%;
 
     background: #ffffff;
-}
-
-.timeline-horizontal {
-    max-width: 1200px;
-    margin: auto;
-
-    display: flex;
-    justify-content: space-between;
-
-    position: relative;
-}
-
-/* Horizontal line */
-
-.timeline-horizontal::before {
-    content: "";
-
-    position: absolute;
-
-    top: 10px;
-    left: 0;
-    right: 0;
-
-    height: 3px;
-
-    background: #b8d8b8;
-}
-
-.timeline-item {
-    width: 23%;
-
-    position: relative;
 
     text-align: center;
 }
 
-.dot {
-    width: 21px;
-    height: 21px;
+.team > h2 {
+    font-size: 2.7rem;
+    color: #174d2b;
 
-    margin: 0 auto 25px;
+    margin-bottom: 50px;
+}
+
+
+/* Cards container */
+
+.card-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Individual card */
+
+.card {
+    width: 300px;
+
+    padding: 30px 25px;
+
+    background: #f5f7f2;
+
+    border: 1px solid #e0e7df;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(23, 65, 35, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(23, 65, 35, 0.15);
+}
+
+
+/* Team member image */
+
+.card img {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
 
     border-radius: 50%;
 
-    background: #2d8a4e;
-
     border: 5px solid #ffffff;
 
-    box-shadow: 0 0 0 2px #2d8a4e;
+    box-shadow:
+        0 0 0 3px #2d8a4e;
 
-    position: relative;
-    z-index: 2;
+    margin-bottom: 20px;
 }
 
-.content h3 {
+
+/* Team member name */
+
+.card h3 {
     color: #1d6838;
 
-    font-size: 1.2rem;
+    font-size: 1.35rem;
 
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-.content p {
+
+/* Team member position */
+
+.card p {
     color: #647065;
 
     font-size: 0.95rem;
+
+    text-transform: capitalize;
 }
 
 
+/* =========================
+   PHILOSOPHY
+   ========================= */
 
-.join-us {
-    padding: 100px 20px;
+.philosophy {
+    padding: 100px 10%;
 
     text-align: center;
 
     background: #edf5e9;
 }
 
-.join-us h3 {
-    font-size: 2.5rem;
+.philosophy h2 {
+    font-size: 2.7rem;
 
     color: #174d2b;
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.join-us p {
-    max-width: 650px;
+.philosophy p {
+    max-width: 850px;
 
-    margin: 0 auto 30px;
+    margin: 0 auto;
 
     color: #5d695f;
 
     font-size: 1.05rem;
+
+    line-height: 1.8;
 }
 
-.join-us a {
-    text-decoration: none;
-}
 
+/* =========================
+   TABLET
+   ========================= */
 
 @media (max-width: 850px) {
 
@@ -271,55 +274,36 @@ button:active {
         font-size: 0.85rem;
     }
 
-    .hero {
-        min-height: 600px;
+    .Hero {
+        min-height: 500px;
         padding: 80px 7%;
     }
 
-    .hero h1 {
-        letter-spacing: -1px;
+    .Hero h2 {
+        font-size: 3rem;
     }
 
-    .timeline-horizontal {
-        flex-direction: column;
-        gap: 45px;
+    .team {
+        padding: 80px 5%;
     }
 
-    .timeline-horizontal::before {
-        top: 0;
-        bottom: 0;
-        left: 10px;
-
-        width: 3px;
-        height: auto;
-    }
-
-    .timeline-item {
-        width: 100%;
-
-        display: flex;
-        align-items: flex-start;
-
-        text-align: left;
-        gap: 25px;
-    }
-
-    .dot {
-        flex-shrink: 0;
-        margin: 0;
-    }
-
-    .content {
-        padding-top: 0;
+    .philosophy {
+        padding: 80px 7%;
     }
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 600px) {
 
     nav {
         flex-wrap: wrap;
         justify-content: center;
+
+        padding: 12px 5%;
     }
 
     nav img {
@@ -329,30 +313,54 @@ button:active {
 
     nav span {
         margin-right: 0;
-        width: auto;
+        font-size: 1.1rem;
     }
 
     nav a {
         font-size: 0.8rem;
+        padding: 7px 9px;
     }
 
-    .hero {
+
+    .Hero {
+        min-height: 450px;
         padding: 70px 6%;
     }
 
-    .hero h1 {
-        font-size: 2.35rem;
+    .Hero h2 {
+        font-size: 2.4rem;
+        letter-spacing: -1px;
     }
 
-    .hero > p:first-of-type {
-        font-size: 1.25rem;
+    .Hero p {
+        font-size: 0.98rem;
+        line-height: 1.7;
     }
 
-    .hero > p:nth-of-type(2) {
-        font-size: 0.95rem;
+
+    .team {
+        padding: 70px 6%;
     }
 
-    .join-us h3 {
-        font-size: 2rem;
+    .team > h2 {
+        font-size: 2.2rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+
+    .philosophy {
+        padding: 70px 6%;
+    }
+
+    .philosophy h2 {
+        font-size: 2.2rem;
+    }
+
+    .philosophy p {
+        font-size: 0.98rem;
     }
 }
