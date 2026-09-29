@@ -1,1 +1,569 @@
-ok
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7f2;
+    color: #17251b;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 7%;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e3e8df;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav span {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1c542d;
+    margin-right: auto;
+}
+
+nav a {
+    color: #26372a;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    padding: 10px 14px;
+    border-radius: 8px;
+
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    background: #e8f2e9;
+    color: #1c7a3a;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(13, 63, 32, 0.96),
+            rgba(31, 104, 55, 0.88)
+        );
+
+    color: white;
+}
+
+.hero h1 {
+    max-width: 1000px;
+
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -2px;
+
+    margin-bottom: 35px;
+}
+
+.hero > p:first-of-type {
+    max-width: 850px;
+
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border-radius: 10px;
+
+    background: #b8e986;
+    color: #16351f;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn:hover {
+    background: #d1f5ae;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section:not(.hero) {
+    padding: 90px 7%;
+}
+
+section h2 {
+    text-align: center;
+
+    color: #174d2b;
+
+    font-size: 2.5rem;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8df;
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(24, 67, 35, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(24, 67, 35, 0.12);
+}
+
+.card h3 {
+    color: #1d6838;
+
+    font-size: 1.25rem;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #647065;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   HOW ECOLOOP WORKS
+========================= */
+
+.process {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.step {
+    flex: 1;
+
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 2px solid #cfe1d0;
+    border-radius: 15px;
+
+    color: #1d6838;
+
+    font-weight: 700;
+
+    position: relative;
+}
+
+.step:not(:last-child)::after {
+    content: "→";
+
+    position: absolute;
+
+    right: -28px;
+
+    font-size: 1.5rem;
+
+    color: #2d8a4e;
+}
+
+
+/* =========================
+   DEVELOPMENT TIMELINE
+========================= */
+
+.timeline {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    gap: 20px;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    left: 5%;
+    right: 5%;
+
+    height: 3px;
+
+    background: #b8d8b8;
+}
+
+.phase {
+    flex: 1;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.phase h3 {
+    display: inline-flex;
+
+    width: 50px;
+    height: 50px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2d8a4e;
+
+    border: 5px solid #ffffff;
+
+    box-shadow:
+        0 0 0 2px #2d8a4e;
+
+    color: white;
+
+    font-size: 0;
+}
+
+.phase h3::after {
+    content: "✓";
+
+    font-size: 1rem;
+}
+
+
+/* =========================
+   BETA / WAITLIST
+========================= */
+
+.wait {
+    text-align: center;
+
+    background: #edf5e9;
+}
+
+.wait h2 {
+    margin-bottom: 15px;
+}
+
+.wait p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #5d695f;
+
+    font-size: 1.05rem;
+}
+
+.wait input {
+    width: min(450px, 90%);
+
+    padding: 15px 18px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #cbd8cc;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 1rem;
+
+    background: white;
+}
+
+.wait input:focus {
+    border-color: #2d8a4e;
+
+    box-shadow:
+        0 0 0 3px rgba(45, 138, 78, 0.12);
+}
+
+.wait .btn {
+    margin-top: 5px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #123b22;
+
+    color: white;
+}
+
+footer h2 {
+    color: white;
+
+    font-size: 1.7rem;
+
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #c9dccd;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 5%;
+        gap: 8px;
+    }
+
+    nav span {
+        font-size: 1.1rem;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 80px 7%;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .step:not(:last-child)::after {
+        content: "↓";
+
+        right: auto;
+        bottom: -30px;
+        top: auto;
+    }
+
+    .timeline {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+
+        left: 25px;
+
+        width: 3px;
+        height: auto;
+    }
+
+    .phase {
+        text-align: left;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .phase h3 {
+        flex-shrink: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav span {
+        margin-right: 0;
+        width: 100%;
+
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero > p:first-of-type {
+        font-size: 1.25rem;
+    }
+
+    section:not(.hero) {
+        padding: 70px 6%;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .wait h2 {
+        font-size: 2rem;
+    }
+
+    footer h2 {
+        font-size: 1.4rem;
+    }
+}
