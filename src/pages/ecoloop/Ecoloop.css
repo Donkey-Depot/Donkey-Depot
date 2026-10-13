@@ -41,6 +41,12 @@ nav {
     z-index: 1000;
 }
 
+nav img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
 nav span {
     font-size: 1.35rem;
     font-weight: 800;
@@ -65,8 +71,6 @@ nav a:hover {
     background: #e8f2e9;
     color: #1c7a3a;
 }
-
-
 /* =========================
    HERO
 ========================= */
