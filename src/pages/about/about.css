@@ -20,18 +20,21 @@ body {
 }
 
 
+
 /* =========================
    NAVIGATION
-   ========================= */
+========================= */
 
 nav {
     width: 100%;
     min-height: 80px;
-    padding: 15px 7%;
+    padding: 15px 5%;
 
     display: flex;
     align-items: center;
-    gap: 25px;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 
     background: #ffffff;
     border-bottom: 1px solid #e3e8df;
@@ -41,36 +44,225 @@ nav {
     z-index: 1000;
 }
 
-nav img {
+/* Logo and brand */
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    padding: 0;
+    text-decoration: none;
+}
+
+nav .logo:hover {
+    background: transparent;
+}
+
+nav .logo img {
     width: 48px;
     height: 48px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
-nav span {
-    font-size: 1.35rem;
+nav .brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+nav .brand-name {
+    font-size: 1.25rem;
     font-weight: 800;
+    line-height: 1.2;
     color: #1c542d;
-
-    margin-right: auto;
 }
 
-nav a {
+nav .brand-info small {
+    display: block;
+    max-width: 230px;
+
+    font-size: 0.62rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #647065;
+}
+
+/* Navigation links */
+
+nav .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: wrap;
+}
+
+nav .nav-links a {
     color: #26372a;
     text-decoration: none;
-
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
 
-    padding: 10px 14px;
+    padding: 9px 10px;
     border-radius: 8px;
 
     transition: 0.25s ease;
 }
 
-nav a:hover {
+nav .nav-links a:hover {
     background: #e8f2e9;
     color: #1c7a3a;
+}
+
+/* Email and social links */
+
+nav .nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav .email-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 0;
+
+    color: #405646;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+nav .email-link:hover {
+    color: #1c7a3a;
+    background: transparent;
+}
+
+nav .social-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav .social-links a {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border-radius: 9px;
+
+    background: #edf5e9;
+    color: #1c542d;
+
+    font-size: 1.15rem;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+nav .social-links a:hover {
+    background: #1c542d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+    nav {
+        padding: 12px 4%;
+        gap: 12px;
+    }
+
+    nav .brand-info small {
+        max-width: 200px;
+    }
+
+    nav .nav-links a {
+        padding: 8px;
+        font-size: 0.82rem;
+    }
+
+    nav .email-link {
+        font-size: 0.68rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 850px) {
+    nav {
+        justify-content: center;
+        padding: 14px 5%;
+        gap: 12px;
+    }
+
+    nav .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav .nav-contact {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 4%;
+        gap: 10px;
+    }
+
+    nav .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav .brand-name {
+        font-size: 1.1rem;
+    }
+
+    nav .brand-info small {
+        max-width: 230px;
+        font-size: 0.57rem;
+    }
+
+    nav .nav-links {
+        gap: 2px;
+    }
+
+    nav .nav-links a {
+        padding: 7px;
+        font-size: 0.76rem;
+    }
+
+    nav .email-link {
+        font-size: 0.68rem;
+    }
+
+    nav .social-links a {
+        width: 34px;
+        height: 34px;
+        font-size: 1.05rem;
+    }
 }
 
 
