@@ -1,6 +1,29 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://donkey-depot-lemon.vercel.app/</loc>
   </url>
+
+  <url>
+    <loc>https://donkey-depot-lemon.vercel.app/src/pages/home/Home.html</loc>
+  </url>
+
+  <url>
+    <loc>https://donkey-depot-lemon.vercel.app/src/pages/about/About.html</loc>
+  </url>
+
+  <url>
+    <loc>https://donkey-depot-lemon.vercel.app/src/pages/products/products.html</loc>
+  </url>
+
+  <url>
+    <loc>https://donkey-depot-lemon.vercel.app/src/pages/ecoloop/Ecoloop.html</loc>
+  </url>
+
+  <url>
+    <loc>https://donkey-depot-lemon.vercel.app/src/pages/contact/Contact.html</loc>
+  </url>
+
 </urlset>
