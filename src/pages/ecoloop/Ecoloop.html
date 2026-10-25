@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EcoLoop | Donkey Depot</title>
+
+    <meta name="description"
+          content="EcoLoop by Donkey Depot is a circular economy platform in development, designed to connect households, businesses, transport providers, and recycling partners.">
+
+    <meta name="theme-color" content="#10251b">
 
     <script>
         window.va = window.va || function () {
@@ -22,7 +28,11 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- NAVIGATION -->
 <nav class="navbar">
+
     <a href="../home/Home.html" class="logo">
         <img src="../../assets/images/logo.png" alt="Donkey Depot logo">
 
@@ -32,95 +42,565 @@
         </div>
     </a>
 
-    <div class="nav-links">
+    <button class="mobile-menu-toggle"
+            id="mobileMenuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mainNavigation">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-links" id="mainNavigation">
         <a href="../home/Home.html">Home</a>
         <a href="../about/About.html">About</a>
         <a href="../products/products.html">Products</a>
-        <a href="Ecoloop.html">EcoLoop</a>
+        <a href="Ecoloop.html" class="active">EcoLoop</a>
         <a href="../contact/Contact.html">Contact Us</a>
     </div>
 
     <div class="nav-contact">
-        <a href="mailto:donkeydepot971@gmail.com" class="email-link"
+        <a href="mailto:donkeydepot971@gmail.com"
+           class="email-link"
            aria-label="Email Donkey Depot">
+
             <i class="fa-solid fa-envelope"></i>
             donkeydepot971@gmail.com
         </a>
 
         <div class="social-links">
+
             <a href="https://www.linkedin.com/posts/donkey-diposit_join-our-community-hub-by-the-link-or-scanning-activity-7490446978384838657-GOJw"
-               target="_blank" rel="noopener noreferrer"
+               target="_blank"
+               rel="noopener noreferrer"
                aria-label="Donkey Depot on LinkedIn">
+
                 <i class="fa-brands fa-linkedin"></i>
             </a>
 
             <a href="https://instagram.com/donkeydepot"
-               target="_blank" rel="noopener noreferrer"
+               target="_blank"
+               rel="noopener noreferrer"
                aria-label="Donkey Depot on Instagram">
+
                 <i class="fa-brands fa-instagram"></i>
             </a>
+
         </div>
     </div>
+
 </nav>
 
-<section class="hero">
-<h1>The Next Generation of EcoLoop</h1>
-<p>Rebuilt from the ground up to create a faster, smarter, and more seamless circular economy platform for communities, collectors, and businesses.</p>
-<p><a class="btn" href="#beta">Join the Beta</a></p>
-</section>
 
-<section>
-<h2>Built From Scratch</h2>
-<div class="grid">
-<div class="card"><h3> Faster</h3><p>Completely redesigned architecture for better speed and reliability.</p></div>
-<div class="card"><h3> Secure</h3><p>Modern foundations prepared for future growth and partnerships.</p></div>
-<div class="card"><h3> Better UX</h3><p>A cleaner interface designed to make sustainability simple.</p></div>
-</div>
-</section>
+<main id="main-content">
 
-<section>
-<h2>Upcoming Features</h2>
-<div class="grid">
-<div class="card"><h3>Smart Waste Scanner</h3><p>Identify recyclable materials with intelligent guidance.</p></div>
-<div class="card"><h3>Impact Wallet</h3><p>Track your environmental contribution and future rewards.</p></div>
-<div class="card"><h3>Collection Network</h3><p>Connect households, collectors and recycling partners.</p></div>
-<div class="card"><h3>Live Insights</h3><p>See community impact through interactive dashboards.</p></div>
-<div class="card"><h3>Notifications</h3><p>Collection reminders and important updates.</p></div>
-<div class="card"><h3>Cloud Ready</h3><p>Built for future expansion and large-scale deployment.</p></div>
-</div>
-</section>
+    <!-- HERO -->
+    <section class="hero">
 
-<section>
-<h2>How EcoLoop Works</h2>
-<div class="process">
-<div class="step"><br>Household</div>
-<div class="step"><br>Scan Waste</div>
-<div class="step"><br>Schedule Collection</div>
-<div class="step"><br>Processing</div>
-<div class="step"><br>Environmental Impact</div>
-</div>
-</section>
+        <div class="hero-content">
 
-<section>
-<h2>Development Progress</h2>
-<div class="timeline">
-<div class="phase"><h3> Planning</h3></div>
-<div class="phase"><h3> Design</h3></div>
-<div class="phase"><h3> Development</h3></div>
-<div class="phase"><h3> Testing</h3></div>
-<div class="phase"><h3> Launch</h3></div>
-</div>
-</section>
+            <span class="eyebrow">DONKEY DEPOT • ENVIRONMENTAL TECHNOLOGY</span>
 
-<section id="beta" class="wait">
-<h2>Become an Early Tester</h2>
-<p>Join our exclusive beta community and help shape the future of EcoLoop.</p>
-<input type="email" placeholder="Enter your email">
-<br><a href="#" class="btn">Join Beta Waitlist</a>
-</section>
+            <h1>The Next Generation of EcoLoop</h1>
 
-<footer>
-<h2>Together We Can Build a Cleaner Tomorrow.</h2>
-<p>© 2026 Donkey Depot • EcoLoop</p>
+            <p>
+                A smarter approach to the circular economy.
+                EcoLoop is being developed to connect people, businesses,
+                transportation providers, and recycling partners through
+                one digital ecosystem.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn" href="#beta">Join the Beta</a>
+                <a class="btn btn-secondary" href="#how-it-works">
+                    Discover EcoLoop
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CURRENT PLATFORM EXPLANATION -->
+    <section id="about-ecoloop" class="platform-intro">
+
+        <span class="eyebrow">ABOUT THE PLATFORM</span>
+
+        <h2>One Ecosystem for a Circular Future</h2>
+
+        <p>
+            EcoLoop is a digital circular-economy platform under development
+            by Donkey Depot. Its purpose is to make recyclable materials
+            easier to identify, collect, transport, and connect with
+            appropriate recycling and processing facilities.
+        </p>
+
+        <p>
+            By bringing different participants together, EcoLoop aims
+            to create a more connected and organized recycling ecosystem.
+        </p>
+
+        <div class="development-notice">
+            <i class="fa-solid fa-code"></i>
+
+            <div>
+                <strong>Currently in Development</strong>
+
+                <p>
+                    EcoLoop's platform and services are currently under
+                    development. The features described on this page
+                    represent the planned direction of the platform and
+                    are not presented as currently operational services.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- BUILT FROM SCRATCH -->
+    <section>
+
+        <span class="eyebrow">OUR APPROACH</span>
+
+        <h2>Built for a Better Experience</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Performance</h3>
+                <p>
+                    A modern platform architecture designed with speed,
+                    responsiveness, and future growth in mind.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Security</h3>
+                <p>
+                    A development approach that prioritizes secure
+                    foundations and responsible data management.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>User Experience</h3>
+                <p>
+                    An intuitive experience designed to make participation
+                    in recycling simpler and more accessible.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- USER CATEGORIES -->
+    <section id="users">
+
+        <span class="eyebrow">WHO IS ECOLOOP FOR?</span>
+
+        <h2>Connecting Every Part of the Recycling Journey</h2>
+
+        <p class="section-description">
+            EcoLoop is being designed for the people and organizations
+            that make recycling and material recovery possible.
+        </p>
+
+        <div class="grid audience-grid">
+
+            <div class="card audience-card">
+
+                <div class="audience-icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <h3>Households &amp; Individuals</h3>
+
+                <p>
+                    Individuals and families who want to manage recyclable
+                    household materials and participate in a more
+                    sustainable environment.
+                </p>
+
+            </div>
+
+
+            <div class="card audience-card">
+
+                <div class="audience-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <h3>Businesses &amp; Organizations</h3>
+
+                <p>
+                    Shops, companies, offices, and organizations looking
+                    for better ways to organize and manage recyclable
+                    materials generated through their activities.
+                </p>
+
+            </div>
+
+
+            <div class="card audience-card">
+
+                <div class="audience-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+                <h3>Transportation Providers</h3>
+
+                <p>
+                    Truck owners, transport companies, and independent
+                    vehicle operators who can help move recyclable
+                    materials from collection points to recycling facilities.
+                </p>
+
+            </div>
+
+
+            <div class="card audience-card">
+
+                <div class="audience-icon">
+                    <i class="fa-solid fa-recycle"></i>
+                </div>
+
+                <h3>Recycling Partners</h3>
+
+                <p>
+                    Recycling facilities, material recovery centers,
+                    sorting operations, and processing companies that
+                    handle recyclable materials.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW ECOLOOP WORKS -->
+    <section id="how-it-works">
+
+        <span class="eyebrow">THE USER JOURNEY</span>
+
+        <h2>How EcoLoop Is Designed to Work</h2>
+
+        <p class="section-description">
+            A connected journey from identifying recyclable materials
+            to their collection, transportation, and processing.
+        </p>
+
+        <div class="process journey">
+
+            <div class="step">
+                <i class="fa-solid fa-user-plus"></i>
+                <h3>01. Register</h3>
+                <p>
+                    Create an account and join the EcoLoop ecosystem.
+                </p>
+            </div>
+
+            <div class="step">
+                <i class="fa-solid fa-camera"></i>
+                <h3>02. Identify Materials</h3>
+                <p>
+                    Identify recyclable materials and provide
+                    information about what needs to be collected.
+                </p>
+            </div>
+
+            <div class="step">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>03. Arrange Transport</h3>
+                <p>
+                    Connect with suitable transportation providers
+                    to move recyclable materials.
+                </p>
+            </div>
+
+            <div class="step">
+                <i class="fa-solid fa-industry"></i>
+                <h3>04. Processing</h3>
+                <p>
+                    Deliver materials to appropriate recycling,
+                    sorting, or processing facilities.
+                </p>
+            </div>
+
+            <div class="step">
+                <i class="fa-solid fa-earth-americas"></i>
+                <h3>05. Environmental Impact</h3>
+                <p>
+                    Support a more measurable and organized
+                    circular-economy system.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="journey-note">
+            This describes the intended EcoLoop user journey.
+            Its services are still under development.
+        </p>
+
+    </section>
+
+
+    <!-- UPCOMING FEATURES -->
+    <section id="features">
+
+        <span class="eyebrow">THE FUTURE OF ECOLOOP</span>
+
+        <h2>Upcoming Features</h2>
+
+        <p class="section-description">
+            A growing set of planned tools designed to make the
+            recycling ecosystem more intelligent and connected.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <i class="fa-solid fa-camera"></i>
+                <h3>Smart Waste Scanner</h3>
+                <p>
+                    Intelligent material identification and
+                    guidance for recyclable waste.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-wallet"></i>
+                <h3>Impact Wallet</h3>
+                <p>
+                    A way to track environmental contributions
+                    and explore future reward possibilities.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-truck"></i>
+                <h3>Collection Network</h3>
+                <p>
+                    A connected network linking material providers,
+                    transport operators, and recycling partners.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Live Insights</h3>
+                <p>
+                    Interactive dashboards for monitoring
+                    recycling activities and environmental impact.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-bell"></i>
+                <h3>Notifications</h3>
+                <p>
+                    Collection reminders, service updates,
+                    and important platform notifications.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Scalable Infrastructure</h3>
+                <p>
+                    A digital foundation designed to support
+                    future expansion and additional services.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BETA -->
+    <section id="beta" class="wait">
+
+        <span class="eyebrow">BE PART OF THE JOURNEY</span>
+
+        <h2>Become an Early Tester</h2>
+
+        <p>
+            Help shape the future of EcoLoop.
+            Express your interest in joining the beta community
+            and stay connected as development progresses.
+        </p>
+
+        <a class="btn"
+           href="mailto:donkeydepot971@gmail.com?subject=EcoLoop%20Beta%20Interest">
+
+            <i class="fa-solid fa-envelope"></i>
+            Express Beta Interest
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="../home/Home.html" class="logo">
+                <img src="../../assets/images/logo.png"
+                     alt="Donkey Depot logo">
+
+                <div class="brand-info">
+                    <span class="brand-name">Donkey Depot</span>
+                    <small>Global Environmental Tech Aggregator &amp; Vocational Impact Enterprise</small>
+                </div>
+            </a>
+
+            <p>
+                Building technology-driven solutions for a more
+                connected and sustainable future.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+            <h3>Explore</h3>
+
+            <a href="../home/Home.html">Home</a>
+            <a href="../about/About.html">About Us</a>
+            <a href="../products/products.html">Products</a>
+            <a href="Ecoloop.html">EcoLoop</a>
+        </div>
+
+
+        <div class="footer-column">
+            <h3>EcoLoop</h3>
+
+            <a href="#about-ecoloop">About the Platform</a>
+            <a href="#users">Who It's For</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#features">Upcoming Features</a>
+        </div>
+
+
+        <div class="footer-column">
+            <h3>Connect</h3>
+
+            <a href="../contact/Contact.html">Contact Us</a>
+
+            <a href="mailto:donkeydepot971@gmail.com">
+                Email Donkey Depot
+            </a>
+
+            <div class="social-links">
+
+                <a href="https://www.linkedin.com/posts/donkey-diposit_join-our-community-hub-by-the-link-or-scanning-activity-7490446978384838657-GOJw"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://instagram.com/donkeydepot"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Donkey Depot. All rights reserved.
+        </p>
+
+        <span>EcoLoop • Building a Cleaner Tomorrow</span>
+
+    </div>
+
 </footer>
-</body></html>
+
+
+<!-- MOBILE NAVIGATION SCRIPT -->
+<script>
+
+    const menuToggle = document.getElementById("mobileMenuToggle");
+    const navigation = document.getElementById("mainNavigation");
+
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen = navigation.classList.toggle("nav-open");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        menuToggle.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+    navigation.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            navigation.classList.remove("nav-open");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+            menuToggle.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+    });
+
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            navigation.classList.remove("nav-open");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+            menuToggle.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
