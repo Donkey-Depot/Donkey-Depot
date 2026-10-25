@@ -1,5 +1,12 @@
+
+/* =========================================
+   ECOLOOP — DONKEY DEPOT
+   Complete Responsive Stylesheet
+========================================= */
+
+
 /* =========================
-   RESET
+   1. RESET & GLOBAL
 ========================= */
 
 * {
@@ -10,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -17,24 +25,71 @@ body {
     background: #f5f7f2;
     color: #17251b;
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+::selection {
+    background: #b8e986;
+    color: #16351f;
 }
 
 
-
 /* =========================
-   NAVIGATION
+   2. ACCESSIBILITY
 ========================= */
 
-nav {
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 15px;
+    z-index: 9999;
+
+    padding: 12px 18px;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #10251b;
+
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 15px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #67b985;
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   3. NAVIGATION
+========================= */
+
+.navbar {
     width: 100%;
     min-height: 80px;
-    padding: 15px 5%;
+    padding: 14px 5%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap;
 
     background: #ffffff;
     border-bottom: 1px solid #e3e8df;
@@ -42,116 +97,122 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(20, 60, 30, 0.035);
 }
+
 
 /* Logo and brand */
 
-nav .logo {
+.navbar .logo,
+.footer-brand .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 
     flex-shrink: 0;
-    padding: 0;
+
     text-decoration: none;
 }
 
-nav .logo:hover {
-    background: transparent;
-}
-
-nav .logo img {
+.navbar .logo img,
+.footer-brand .logo img {
     width: 48px;
     height: 48px;
+
     object-fit: contain;
     flex-shrink: 0;
 }
 
-nav .brand-info {
+.brand-info {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-nav .brand-name {
+.brand-name {
     font-size: 1.25rem;
     font-weight: 800;
     line-height: 1.2;
     color: #1c542d;
 }
 
-nav .brand-info small {
+.brand-info small {
     display: block;
     max-width: 230px;
 
     font-size: 0.62rem;
     font-weight: 500;
     line-height: 1.35;
+
     color: #647065;
 }
 
+
 /* Navigation links */
 
-nav .nav-links {
+.navbar .nav-links {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3px;
-    flex-wrap: wrap;
 }
 
-nav .nav-links a {
+.navbar .nav-links a {
+    padding: 9px 10px;
+
+    border-radius: 8px;
+
     color: #26372a;
     text-decoration: none;
+
     font-size: 0.9rem;
     font-weight: 600;
-
-    padding: 9px 10px;
-    border-radius: 8px;
 
     transition: 0.25s ease;
 }
 
-nav .nav-links a:hover {
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
     background: #e8f2e9;
     color: #1c7a3a;
 }
 
+
 /* Email and social links */
 
-nav .nav-contact {
+.navbar .nav-contact {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-nav .email-link {
+.navbar .email-link {
     display: flex;
     align-items: center;
     gap: 6px;
 
-    padding: 6px 0;
-
     color: #405646;
     text-decoration: none;
+
     font-size: 0.72rem;
     font-weight: 600;
 
     overflow-wrap: anywhere;
+    transition: color 0.2s ease;
 }
 
-nav .email-link:hover {
+.navbar .email-link:hover {
     color: #1c7a3a;
-    background: transparent;
 }
 
-nav .social-links {
+.social-links {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-nav .social-links a {
+.navbar .social-links a {
     width: 36px;
     height: 36px;
 
@@ -159,7 +220,6 @@ nav .social-links a {
     align-items: center;
     justify-content: center;
 
-    padding: 0;
     border-radius: 9px;
 
     background: #edf5e9;
@@ -171,152 +231,145 @@ nav .social-links a {
     transition: 0.25s ease;
 }
 
-nav .social-links a:hover {
+.navbar .social-links a:hover {
     background: #1c542d;
     color: #ffffff;
     transform: translateY(-2px);
 }
 
-/* Tablet */
 
-@media (max-width: 1100px) {
-    nav {
-        padding: 12px 4%;
-        gap: 12px;
-    }
+/* Mobile menu button */
 
-    nav .brand-info small {
-        max-width: 200px;
-    }
+.mobile-menu-toggle {
+    display: none;
 
-    nav .nav-links a {
-        padding: 8px;
-        font-size: 0.82rem;
-    }
+    width: 42px;
+    height: 42px;
 
-    nav .email-link {
-        font-size: 0.68rem;
-    }
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dce8dc;
+    border-radius: 10px;
+
+    background: #edf5e9;
+    color: #1c542d;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
-/* Mobile and smaller screens */
-
-@media (max-width: 850px) {
-    nav {
-        justify-content: center;
-        padding: 14px 5%;
-        gap: 12px;
-    }
-
-    nav .logo {
-        width: 100%;
-        justify-content: center;
-    }
-
-    nav .nav-links {
-        width: 100%;
-        justify-content: center;
-    }
-
-    nav .nav-contact {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+.mobile-menu-toggle:hover {
+    background: #dcebdc;
 }
 
-@media (max-width: 600px) {
-    nav {
-        padding: 12px 4%;
-        gap: 10px;
-    }
-
-    nav .logo img {
-        width: 40px;
-        height: 40px;
-    }
-
-    nav .brand-name {
-        font-size: 1.1rem;
-    }
-
-    nav .brand-info small {
-        max-width: 230px;
-        font-size: 0.57rem;
-    }
-
-    nav .nav-links {
-        gap: 2px;
-    }
-
-    nav .nav-links a {
-        padding: 7px;
-        font-size: 0.76rem;
-    }
-
-    nav .email-link {
-        font-size: 0.68rem;
-    }
-
-    nav .social-links a {
-        width: 34px;
-        height: 34px;
-        font-size: 1.05rem;
-    }
-}
 
 /* =========================
-   HERO
+   4. HERO SECTION
 ========================= */
 
 .hero {
-    min-height: 650px;
+    min-height: 620px;
     padding: 100px 10%;
 
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
 
     background:
         linear-gradient(
             120deg,
-            rgba(13, 63, 32, 0.96),
-            rgba(31, 104, 55, 0.88)
+            rgba(13, 63, 32, 0.97),
+            rgba(31, 104, 55, 0.90)
         );
 
-    color: white;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -150px;
+    bottom: -220px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.025),
+        0 0 0 90px rgba(255, 255, 255, 0.02);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+
+    position: relative;
+    z-index: 1;
+}
+
+.hero .eyebrow {
+    color: #b8e986;
 }
 
 .hero h1 {
     max-width: 1000px;
 
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    margin-bottom: 28px;
+
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
     line-height: 1.08;
     letter-spacing: -2px;
-
-    margin-bottom: 35px;
 }
 
-.hero > p:first-of-type {
+.hero p {
     max-width: 850px;
 
-    font-size: 1.5rem;
-    line-height: 1.5;
-
     margin-bottom: 25px;
+
+    font-size: 1.25rem;
+    line-height: 1.7;
+
+    color: #e2eee4;
+}
+
+
+/* Hero buttons */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 30px;
 }
 
 
 /* =========================
-   BUTTON
+   5. BUTTONS
 ========================= */
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-    padding: 15px 28px;
+    padding: 14px 27px;
 
+    border: 1px solid transparent;
     border-radius: 10px;
 
     background: #b8e986;
@@ -324,7 +377,7 @@ nav .social-links a:hover {
 
     text-decoration: none;
 
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-weight: 800;
 
     transition:
@@ -338,51 +391,158 @@ nav .social-links a:hover {
 
     transform: translateY(-3px);
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .btn:active {
     transform: translateY(0);
 }
 
+.btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.65);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #174d2b;
+}
+
 
 /* =========================
-   GENERAL SECTIONS
+   6. GENERAL SECTIONS
 ========================= */
 
 section:not(.hero) {
-    padding: 90px 7%;
+    padding: 85px 7%;
+    scroll-margin-top: 90px;
 }
 
 section h2 {
-    text-align: center;
+    margin-bottom: 35px;
 
     color: #174d2b;
 
-    font-size: 2.5rem;
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    line-height: 1.2;
 
-    margin-bottom: 45px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #2d8a4e;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-description {
+    max-width: 750px;
+
+    margin: -15px auto 40px;
+
+    color: #647065;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    text-align: center;
 }
 
 
 /* =========================
-   CARDS
+   7. PLATFORM INTRODUCTION
+========================= */
+
+.platform-intro {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.platform-intro > p {
+    max-width: 900px;
+
+    margin: 15px auto;
+
+    color: #56665a;
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+
+    text-align: center;
+}
+
+.development-notice {
+    max-width: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    margin: 35px auto 0;
+    padding: 24px;
+
+    background: #eaf3e9;
+
+    border-left: 4px solid #2d8a4e;
+    border-radius: 10px;
+}
+
+.development-notice > i {
+    flex-shrink: 0;
+
+    margin-top: 4px;
+
+    color: #2d8a4e;
+    font-size: 24px;
+}
+
+.development-notice strong {
+    display: block;
+
+    color: #174d2b;
+    font-size: 1.05rem;
+}
+
+.development-notice p {
+    margin-top: 8px;
+
+    color: #56665a;
+
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   8. GRID & CARDS
 ========================= */
 
 .grid {
+    width: 100%;
     max-width: 1200px;
+
     margin: 0 auto;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 25px;
 }
 
 .card {
+    min-width: 0;
+
     padding: 30px;
 
     background: #ffffff;
@@ -390,264 +550,468 @@ section h2 {
     border: 1px solid #e1e8df;
     border-radius: 15px;
 
-    box-shadow:
-        0 8px 25px rgba(24, 67, 35, 0.06);
+    box-shadow: 0 8px 25px rgba(24, 67, 35, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color: #c6dfc7;
+
+    box-shadow: 0 15px 35px rgba(24, 67, 35, 0.12);
+}
+
+.card > i {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #2d8a4e;
+
+    font-size: 27px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    color: #1d6838;
+
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.card p {
+    color: #647065;
+
+    font-size: 0.93rem;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   9. USER CATEGORIES
+========================= */
+
+.audience-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 35px;
+}
+
+.audience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.audience-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 13px;
+
+    background: #e8f4e7;
+    color: #2d8a4e;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   10. USER JOURNEY
+========================= */
+
+.journey {
+    max-width: 1250px;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-top: 45px;
+}
+
+.journey .step {
+    min-width: 0;
+    min-height: 240px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 27px 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8dc;
+    border-radius: 15px;
+
+    text-align: center;
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-.card:hover {
-    transform: translateY(-6px);
+.journey .step:hover {
+    transform: translateY(-5px);
 
-    box-shadow:
-        0 15px 35px rgba(24, 67, 35, 0.12);
+    box-shadow: 0 12px 30px rgba(24, 67, 35, 0.09);
 }
 
-.card h3 {
-    color: #1d6838;
+.journey .step > i {
+    display: block;
 
-    font-size: 1.25rem;
-
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: #647065;
-
-    font-size: 0.95rem;
-}
-
-
-/* =========================
-   HOW ECOLOOP WORKS
-========================= */
-
-.process {
-    max-width: 1200px;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.step {
-    flex: 1;
-
-    min-height: 110px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 20px;
-
-    background: #ffffff;
-
-    border: 2px solid #cfe1d0;
-    border-radius: 15px;
-
-    color: #1d6838;
-
-    font-weight: 700;
-
-    position: relative;
-}
-
-.step:not(:last-child)::after {
-    content: "→";
-
-    position: absolute;
-
-    right: -28px;
-
-    font-size: 1.5rem;
+    margin-bottom: 20px;
 
     color: #2d8a4e;
+    font-size: 29px;
 }
 
+.journey .step h3 {
+    margin-bottom: 12px;
 
-/* =========================
-   DEVELOPMENT TIMELINE
-========================= */
-
-.timeline {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    gap: 20px;
-
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-
-    position: absolute;
-
-    top: 25px;
-    left: 5%;
-    right: 5%;
-
-    height: 3px;
-
-    background: #b8d8b8;
-}
-
-.phase {
-    flex: 1;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.phase h3 {
-    display: inline-flex;
-
-    width: 50px;
-    height: 50px;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #2d8a4e;
-
-    border: 5px solid #ffffff;
-
-    box-shadow:
-        0 0 0 2px #2d8a4e;
-
-    color: white;
-
-    font-size: 0;
-}
-
-.phase h3::after {
-    content: "✓";
+    color: #1d6838;
 
     font-size: 1rem;
+    line-height: 1.5;
+}
+
+.journey .step p {
+    color: #647065;
+
+    font-size: 0.87rem;
+    line-height: 1.7;
+}
+
+.journey-note {
+    max-width: 800px;
+
+    margin: 25px auto 0;
+
+    color: #758078;
+
+    font-size: 0.85rem;
+    text-align: center;
 }
 
 
 /* =========================
-   BETA / WAITLIST
+   11. UPCOMING FEATURES
+========================= */
+
+#features .card {
+    min-height: 210px;
+}
+
+#features .card h3 {
+    font-size: 1.18rem;
+}
+
+
+/* =========================
+   12. BETA SECTION
 ========================= */
 
 .wait {
+    background: #eaf3e9;
     text-align: center;
-
-    background: #edf5e9;
 }
 
 .wait h2 {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .wait p {
-    max-width: 650px;
+    max-width: 700px;
 
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
 
     color: #5d695f;
 
     font-size: 1.05rem;
-}
-
-.wait input {
-    width: min(450px, 90%);
-
-    padding: 15px 18px;
-
-    margin-bottom: 15px;
-
-    border: 1px solid #cbd8cc;
-
-    border-radius: 10px;
-
-    outline: none;
-
-    font-size: 1rem;
-
-    background: white;
-}
-
-.wait input:focus {
-    border-color: #2d8a4e;
-
-    box-shadow:
-        0 0 0 3px rgba(45, 138, 78, 0.12);
+    line-height: 1.8;
 }
 
 .wait .btn {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 
 /* =========================
-   FOOTER
+   13. FOOTER
 ========================= */
 
-footer {
-    padding: 60px 20px;
-
-    text-align: center;
+.site-footer {
+    padding: 65px 7% 22px;
 
     background: #123b22;
-
-    color: white;
+    color: #ffffff;
 }
 
-footer h2 {
-    color: white;
+.footer-main {
+    width: 100%;
+    max-width: 1250px;
 
-    font-size: 1.7rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 
-    margin-bottom: 12px;
+    gap: 45px;
+
+    margin: 0 auto;
 }
 
-footer p {
+
+/* Footer brand */
+
+.footer-brand {
+    max-width: 360px;
+}
+
+.footer-brand .logo {
+    align-items: center;
+}
+
+.footer-brand .brand-name {
+    color: #ffffff;
+}
+
+.footer-brand .brand-info small {
+    color: #bed0c1;
+}
+
+.footer-brand > p {
+    margin-top: 22px;
+
     color: #c9dccd;
 
     font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* Footer columns */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 13px;
+}
+
+.footer-column h3 {
+    margin-bottom: 8px;
+
+    color: #b8e986;
+
+    font-size: 1.05rem;
+}
+
+.footer-column > a {
+    color: #c9dccd;
+
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column > a:hover {
+    color: #b8e986;
+}
+
+
+/* Footer social media */
+
+.footer-column .social-links {
+    margin-top: 8px;
+}
+
+.footer-column .social-links a {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: #b8e986;
+
+    font-size: 19px;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.footer-column .social-links a:hover {
+    background: #b8e986;
+    color: #123b22;
+    transform: translateY(-3px);
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+    max-width: 1250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 45px auto 0;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+
+    color: #b5c9b9;
+
+    font-size: 0.82rem;
 }
 
 
 /* =========================
-   TABLET
+   14. TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 12px 4%;
+        gap: 12px;
+    }
+
+    .navbar .brand-info small {
+        max-width: 200px;
+    }
+
+    .navbar .nav-links a {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .navbar .email-link {
+        font-size: 0.66rem;
+    }
+
+    .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================
+   15. MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        min-height: 75px;
+
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        padding: 12px 5%;
+    }
+
+    .navbar .logo {
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .mobile-menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .navbar .nav-contact {
+        display: none;
+    }
+
+    .navbar .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        z-index: 1000;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px 5% 20px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #e3e8df;
+
+        box-shadow: 0 12px 22px rgba(20, 60, 30, 0.12);
+    }
+
+    .navbar .nav-links.nav-open {
+        display: flex;
+    }
+
+    .navbar .nav-links a {
+        display: block;
+
+        padding: 14px 15px;
+
+        border-radius: 8px;
+        border-bottom: 1px solid #edf1eb;
+
+        font-size: 0.95rem;
+    }
+
+    .navbar .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .journey {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================
+   16. SMALL TABLETS
 ========================= */
 
 @media (max-width: 850px) {
 
-    nav {
-        padding: 12px 5%;
-        gap: 8px;
-    }
-
-    nav span {
-        font-size: 1.1rem;
-    }
-
-    nav a {
-        padding: 8px;
-        font-size: 0.85rem;
-    }
-
     .hero {
-        min-height: 600px;
+        min-height: 560px;
         padding: 80px 7%;
     }
 
@@ -655,101 +1019,122 @@ footer p {
         letter-spacing: -1px;
     }
 
+    section:not(.hero) {
+        padding: 75px 6%;
+    }
+
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .process {
-        flex-direction: column;
+    .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .step {
-        width: 100%;
+    .footer-main {
+        gap: 35px;
     }
 
-    .step:not(:last-child)::after {
-        content: "↓";
-
-        right: auto;
-        bottom: -30px;
-        top: auto;
-    }
-
-    .timeline {
-        flex-direction: column;
-
-        gap: 30px;
-    }
-
-    .timeline::before {
-        top: 0;
-        bottom: 0;
-
-        left: 25px;
-
-        width: 3px;
-        height: auto;
-    }
-
-    .phase {
-        text-align: left;
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 20px;
-    }
-
-    .phase h3 {
-        flex-shrink: 0;
-    }
 }
 
 
 /* =========================
-   MOBILE
+   17. MOBILE
 ========================= */
 
 @media (max-width: 600px) {
 
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
+    html {
+        scroll-padding-top: 85px;
     }
 
-    nav span {
-        margin-right: 0;
-        width: 100%;
-
-        text-align: center;
+    .navbar {
+        min-height: 68px;
+        padding: 10px 4%;
+        gap: 10px;
     }
 
-    nav a {
-        font-size: 0.8rem;
+    .navbar .logo img {
+        width: 40px;
+        height: 40px;
     }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand-info small {
+        max-width: 220px;
+        font-size: 0.55rem;
+    }
+
+    .mobile-menu-toggle {
+        width: 39px;
+        height: 39px;
+        font-size: 19px;
+    }
+
+
+    /* Hero */
 
     .hero {
-        padding: 70px 6%;
+        min-height: 570px;
+        padding: 75px 6%;
     }
 
     .hero h1 {
-        font-size: 2.35rem;
+        font-size: clamp(2.25rem, 10vw, 3.2rem);
+        letter-spacing: -1.2px;
+        margin-bottom: 23px;
     }
 
-    .hero > p:first-of-type {
-        font-size: 1.25rem;
+    .hero p {
+        font-size: 1.05rem;
+        line-height: 1.7;
     }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* General sections */
 
     section:not(.hero) {
-        padding: 70px 6%;
+        padding: 65px 6%;
     }
 
     section h2 {
         font-size: 2rem;
+        margin-bottom: 27px;
     }
 
+    .eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 1.5px;
+    }
+
+    .section-description {
+        margin-bottom: 30px;
+        font-size: 0.92rem;
+    }
+
+
+    /* Cards */
+
     .grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .audience-grid {
         grid-template-columns: 1fr;
     }
 
@@ -757,11 +1142,126 @@ footer p {
         padding: 25px;
     }
 
-    .wait h2 {
-        font-size: 2rem;
+    .card:hover {
+        transform: translateY(-3px);
     }
 
-    footer h2 {
-        font-size: 1.4rem;
+
+    /* Development notice */
+
+    .development-notice {
+        padding: 18px;
+        gap: 13px;
     }
+
+    .development-notice > i {
+        font-size: 21px;
+    }
+
+    .development-notice p {
+        font-size: 0.86rem;
+    }
+
+
+    /* User journey */
+
+    .journey {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .journey .step {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+
+    .journey .step > i {
+        margin-bottom: 13px;
+    }
+
+    .journey .step p {
+        max-width: 350px;
+    }
+
+
+    /* Beta */
+
+    .wait h2 {
+        font-size: 1.9rem;
+    }
+
+    .wait p {
+        font-size: 0.95rem;
+    }
+
+    .wait .btn {
+        width: 100%;
+        max-width: 350px;
+    }
+
+
+    /* Footer */
+
+    .site-footer {
+        padding: 50px 7% 20px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-column {
+        gap: 11px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================
+   18. VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .navbar .brand-info small {
+        max-width: 175px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+}
+
+
+/* =========================
+   19. REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
 }
