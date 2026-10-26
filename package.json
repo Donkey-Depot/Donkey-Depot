@@ -1,0 +1,27 @@
+{
+  "name": "donkey-depot",
+  "version": "1.0.0",
+  "description": "Donkey Depot is a global environmental technology aggregator and vocational impact enterprise connecting sustainable solutions, innovation, and communities.",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Donkey-Depot/Donkey-Depot.git"
+  },
+  "keywords": [
+    "environmental-technology",
+    "sustainability",
+    "ecoloop",
+    "circular-economy"
+  ],
+  "author": "Donkey Depot",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Donkey-Depot/Donkey-Depot/issues"
+  },
+  "homepage": "https://github.com/Donkey-Depot/Donkey-Depot#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
