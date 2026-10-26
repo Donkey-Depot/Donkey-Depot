@@ -1,11 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#020b09">
-    <title>Donkey Depot | A Greener Future</title>
+
+    <title>Donkey Depot | Environmental Technology & Sustainable Solutions</title>
+    <meta name="description" content="Donkey Depot is a global environmental technology aggregator and vocational impact enterprise connecting sustainable solutions, innovation, and communities.">
+    <meta name="robots" content="index, follow">
 
     <script>
         window.va = window.va || function () {
@@ -40,10 +42,11 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            background:
-                radial-gradient(ellipse at center,
-                    rgba(12, 74, 48, .22),
-                    transparent 65%);
+            background: radial-gradient(
+                ellipse at center,
+                rgba(12, 74, 48, .22),
+                transparent 65%
+            );
         }
 
         .stars {
@@ -89,7 +92,7 @@
                 inset -35px -15px 55px #000,
                 inset 12px 10px 35px rgba(255,255,255,.12),
                 0 0 35px rgba(100,120,110,.15);
-            animation: heal 10s ease-in-out forwards;
+            animation: heal 1.8s ease-in-out forwards;
         }
 
         .earth::before {
@@ -107,7 +110,7 @@
                     #766047 0 10%,
                     transparent 11%);
             opacity: .9;
-            animation: nature 10s ease-in-out forwards;
+            animation: nature 1.8s ease-in-out forwards;
         }
 
         .earth::after {
@@ -115,9 +118,11 @@
             position: absolute;
             inset: -5px;
             border-radius: 50%;
-            background: radial-gradient(circle,
+            background: radial-gradient(
+                circle,
                 transparent 55%,
-                rgba(0,0,0,.6) 100%);
+                rgba(0,0,0,.6) 100%
+            );
         }
 
         .atmosphere {
@@ -126,7 +131,7 @@
             border: 2px solid rgba(50,130,95,.15);
             border-radius: 50%;
             box-shadow: 0 0 25px rgba(50,150,95,.12);
-            animation: atmosphere 10s ease-in-out forwards;
+            animation: atmosphere 1.8s ease-in-out forwards;
         }
 
         .energy {
@@ -134,7 +139,7 @@
             inset: -35px;
             border: 1px solid rgba(30,255,140,0);
             border-radius: 50%;
-            animation: energy 10s ease-in-out forwards;
+            animation: energy 1.8s ease-in-out forwards;
         }
 
         .ring {
@@ -142,7 +147,7 @@
             inset: -55px;
             border: 1px solid rgba(55,255,145,0);
             border-radius: 50%;
-            animation: ring 10s ease-in-out forwards;
+            animation: ring 1.8s ease-in-out forwards;
         }
 
         .content {
@@ -151,7 +156,7 @@
             text-align: center;
             z-index: 5;
             width: 90%;
-            animation: appear 2s ease forwards;
+            animation: appear .5s ease forwards;
         }
 
         .brand {
@@ -167,7 +172,7 @@
             letter-spacing: 2px;
             font-weight: 500;
             margin-bottom: 15px;
-            animation: textGlow 10s ease-in-out forwards;
+            animation: textGlow 1.8s ease-in-out forwards;
         }
 
         p {
@@ -189,11 +194,11 @@
             width: 0;
             height: 100%;
             background: #43dc91;
-            animation: load 9s linear forwards;
+            animation: load 1.8s linear forwards;
         }
 
         @keyframes float {
-            0%,100% { transform: translateY(0); }
+            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
         }
 
@@ -214,8 +219,14 @@
         }
 
         @keyframes nature {
-            0%, 20% { opacity: .9; filter: grayscale(1); }
-            55% { opacity: .65; filter: grayscale(.5) sepia(.4); }
+            0%, 20% {
+                opacity: .9;
+                filter: grayscale(1);
+            }
+            55% {
+                opacity: .65;
+                filter: grayscale(.5) sepia(.4);
+            }
             100% {
                 opacity: .35;
                 filter: grayscale(0) sepia(.3) hue-rotate(65deg);
@@ -234,8 +245,14 @@
         }
 
         @keyframes energy {
-            0% { transform: scale(.8); opacity: 0; }
-            35% { opacity: .8; border-color: rgba(50,255,145,.7); }
+            0% {
+                transform: scale(.8);
+                opacity: 0;
+            }
+            35% {
+                opacity: .8;
+                border-color: rgba(50,255,145,.7);
+            }
             100% {
                 transform: scale(1.5);
                 opacity: 0;
@@ -244,14 +261,28 @@
         }
 
         @keyframes ring {
-            0%, 35% { opacity: 0; transform: scale(.7); }
-            65% { opacity: .8; border-color: rgba(50,255,145,.6); }
-            100% { opacity: 0; transform: scale(1.5); }
+            0%, 35% {
+                opacity: 0;
+                transform: scale(.7);
+            }
+            65% {
+                opacity: .8;
+                border-color: rgba(50,255,145,.6);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
         }
 
         @keyframes textGlow {
-            0%, 30% { color: #a9aaa5; }
-            100% { color: #b9ffd4; text-shadow: 0 0 25px rgba(50,255,145,.25); }
+            0%, 30% {
+                color: #a9aaa5;
+            }
+            100% {
+                color: #b9ffd4;
+                text-shadow: 0 0 25px rgba(50,255,145,.25);
+            }
         }
 
         @keyframes load {
@@ -259,8 +290,14 @@
         }
 
         @keyframes appear {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 500px) {
@@ -285,9 +322,9 @@
 
 <body>
     <main class="scene">
-        <div class="stars"></div>
+        <div class="stars" aria-hidden="true"></div>
 
-        <div class="earth-container">
+        <div class="earth-container" aria-hidden="true">
             <div class="ring"></div>
             <div class="energy"></div>
             <div class="atmosphere"></div>
@@ -296,20 +333,25 @@
 
         <div class="content">
             <div class="brand">DONKEY DEPOT</div>
+
             <h1>A Better World Begins.</h1>
+
             <p>Restoring nature. Rebuilding tomorrow.</p>
 
-            <div class="progress">
+            <div class="progress" role="progressbar"
+                 aria-label="Loading homepage"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
                 <span></span>
             </div>
         </div>
     </main>
 
     <script>
+        // Redirect to the existing homepage after 2 seconds.
         setTimeout(() => {
-            window.location.href =
-                "../../src/pages/home/Home.html";
-        }, 10000);
+            window.location.replace("../../src/pages/home/Home.html");
+        }, 2000);
     </script>
 </body>
 </html>
