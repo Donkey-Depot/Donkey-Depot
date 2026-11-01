@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Donkey Depot — Community Connect</title>
+    <meta name="description" content="Connect with Donkey Depot, join our community, explore EcoLoop, and help build a circular economy.">
 
     <script>
         window.va = window.va || function () {
             (window.vaq = window.vaq || []).push(arguments);
         };
     </script>
-
     <script defer src="/_vercel/insights/script.js"></script>
 
     <script>
@@ -24,61 +21,83 @@
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
     <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
 
+    <!-- NAVIGATION -->
+    <nav class="navbar" aria-label="Main navigation">
 
-<nav class="navbar">
-    <a href="../home/Home.html" class="logo">
-        <img src="../../assets/images/logo.png" alt="Donkey Depot logo">
+        <a href="../home/Home.html" class="logo">
+            <img src="../../assets/images/logo.png" alt="Donkey Depot logo">
 
-        <div class="brand-info">
-            <span class="brand-name">Donkey Depot</span>
-            <small>Global Environmental Tech Aggregator &amp; Vocational Impact Enterprise</small>
-        </div>
-    </a>
-
-    <div class="nav-links">
-        <a href="../home/Home.html">Home</a>
-        <a href="../about/About.html">About</a>
-        <a href="../products/products.html">Products</a>
-        <a href="../ecoloop/Ecoloop.html">EcoLoop</a>
-        <a href="Contact.html">Contact Us</a>
-    </div>
-
-    <div class="nav-contact">
-        <a href="mailto:donkeydepot971@gmail.com"
-           class="email-link"
-           aria-label="Email Donkey Depot">
-            <i class="fa-solid fa-envelope"></i>
-            donkeydepot971@gmail.com
+            <div class="brand-info">
+                <span class="brand-name">Donkey Depot</span>
+                <small>Global Environmental Tech Aggregator &amp; Vocational Impact Enterprise</small>
+            </div>
         </a>
 
-        <div class="social-links">
-            <a href="https://www.linkedin.com/posts/donkey-diposit_join-our-community-hub-by-the-link-or-scanning-activity-7490446978384838657-GOJw"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Donkey Depot on LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
+        <button
+            class="mobile-menu-toggle"
+            id="mobileMenuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mainNavigation"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
 
-            <a href="https://instagram.com/donkeydepot"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Donkey Depot on Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+        <div class="nav-links" id="mainNavigation">
+            <a href="../home/Home.html">Home</a>
+            <a href="../about/About.html">About</a>
+            <a href="../products/products.html">Products</a>
+            <a href="../ecoloop/Ecoloop.html">EcoLoop</a>
+            <a href="Contact.html" aria-current="page">Contact Us</a>
         </div>
-    </div>
-</nav>
 
-<body>
+        <div class="nav-contact">
 
+            <a
+                href="mailto:donkeydepot971@gmail.com"
+                class="email-link"
+                aria-label="Email Donkey Depot"
+            >
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                donkeydepot971@gmail.com
+            </a>
+
+            <div class="social-links">
+                <a
+                    href="https://www.linkedin.com/posts/donkey-diposit_join-our-community-hub-by-the-link-or-scanning-activity-7490446978384838657-GOJw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Donkey Depot on LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                </a>
+
+                <a
+                    href="https://instagram.com/donkeydepot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Donkey Depot on Instagram"
+                >
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- PAGE HEADER -->
     <header>
         <p>COMMUNITY CONNECT</p>
 
@@ -93,6 +112,7 @@
 
     <main>
 
+        <!-- GET INVOLVED -->
         <section id="get-involved">
 
             <p>GET INVOLVED</p>
@@ -105,45 +125,49 @@
                 the mission forward.
             </p>
 
-            <article>
-                <h3>Volunteers</h3>
-                <p>
-                    Help with community initiatives, pilot activities,
-                    events, and local projects.
-                </p>
-            </article>
+            <div class="involvement-grid">
 
-            <article>
-                <h3>Creators</h3>
-                <p>
-                    Help communicate the mission through design, media,
-                    storytelling, and content.
-                </p>
-            </article>
+                <article>
+                    <h3>Volunteers</h3>
+                    <p>
+                        Help with community initiatives, pilot activities,
+                        events, and local projects.
+                    </p>
+                </article>
 
-            <article>
-                <h3>Environmental Advocates</h3>
-                <p>
-                    Help spread awareness and encourage sustainable
-                    practices within the community.
-                </p>
-            </article>
+                <article>
+                    <h3>Creators</h3>
+                    <p>
+                        Help communicate the mission through design, media,
+                        storytelling, and content.
+                    </p>
+                </article>
 
-            <article>
-                <h3>Early Supporters</h3>
-                <p>
-                    Follow the project, provide feedback, test products,
-                    or participate in pilots.
-                </p>
-            </article>
+                <article>
+                    <h3>Environmental Advocates</h3>
+                    <p>
+                        Help spread awareness and encourage sustainable
+                        practices within the community.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Early Supporters</h3>
+                    <p>
+                        Follow the project, provide feedback, test products,
+                        or participate in pilots.
+                    </p>
+                </article>
+
+            </div>
 
             <p>
-                <a href="#contact">Join the Community</a>
+                <a class="button" href="#contact">Join the Community</a>
             </p>
 
         </section>
 
-
+        <!-- CONTACT FORM -->
         <section id="contact">
 
             <p>CONTACT</p>
@@ -155,39 +179,34 @@
                 Keep it simple and reach out.
             </p>
 
-            <form>
+            <form id="contactForm">
 
-                <div>
+                <div class="form-group">
                     <label for="name">Name</label>
-                    <br>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         placeholder="Your name"
+                        autocomplete="name"
                         required
                     >
                 </div>
 
-                <br>
-
-                <div>
+                <div class="form-group">
                     <label for="email">Email</label>
-                    <br>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="you@example.com"
+                        autocomplete="email"
                         required
                     >
                 </div>
 
-                <br>
-
-                <div>
+                <div class="form-group">
                     <label for="reason">Reason for contacting us</label>
-                    <br>
 
                     <select id="reason" name="reason" required>
                         <option value="">Select a reason</option>
@@ -201,11 +220,8 @@
                     </select>
                 </div>
 
-                <br>
-
-                <div>
+                <div class="form-group">
                     <label for="message">Message</label>
-                    <br>
 
                     <textarea
                         id="message"
@@ -216,15 +232,21 @@
                     ></textarea>
                 </div>
 
-                <br>
+                <button type="submit" class="button" id="submitButton">
+                    Send Message
+                </button>
 
-                <button type="submit">Send Message</button>
+                <p
+                    id="formStatus"
+                    role="status"
+                    aria-live="polite"
+                ></p>
 
             </form>
 
         </section>
 
-
+        <!-- CONTENT FLOW -->
         <section id="content-flow">
 
             <p>THE CONTENT FLOW</p>
@@ -249,9 +271,7 @@
 
                 <li>
                     <h3>The Technology</h3>
-                    <p>
-                        EcoLoop provides the digital infrastructure.
-                    </p>
+                    <p>EcoLoop provides the digital infrastructure.</p>
                 </li>
 
                 <li>
@@ -264,55 +284,51 @@
 
                 <li>
                     <h3>The People</h3>
-                    <p>
-                        The community participates.
-                    </p>
+                    <p>The community participates.</p>
                 </li>
 
                 <li>
                     <h3>The Future</h3>
-                    <p>
-                        Waste → Recovery → Processing → Products → Reuse
-                    </p>
+                    <p>Waste → Recovery → Processing → Products → Reuse</p>
                 </li>
 
             </ol>
 
         </section>
 
-
+        <!-- CONVERSION -->
         <section id="conversion">
 
             <p>THE TWO MOST IMPORTANT CONVERSION POINTS</p>
 
-            <article>
-                <h3>Funnel 1 — General Community</h3>
+            <div class="conversion-grid">
 
-                <p>
-                    Home → Join the Movement → Email
-                </p>
+                <article>
+                    <h3>Funnel 1 — General Community</h3>
 
-                <p>
-                    The visitor becomes part of the Donkey Depot
-                    community database.
-                </p>
-            </article>
+                    <p>Home → Join the Movement → Email</p>
 
-            <article>
-                <h3>Funnel 2 — EcoLoop</h3>
+                    <p>
+                        The visitor becomes part of the Donkey Depot
+                        community database.
+                    </p>
+                </article>
 
-                <p>
-                    EcoLoop section → Join Beta → Email
-                </p>
+                <article>
+                    <h3>Funnel 2 — EcoLoop</h3>
 
-                <p>
-                    The visitor becomes an EcoLoop beta prospect.
-                </p>
-            </article>
+                    <p>EcoLoop section → Join Beta → Email</p>
+
+                    <p>
+                        The visitor becomes an EcoLoop beta prospect.
+                    </p>
+                </article>
+
+            </div>
 
         </section>
 
-
+        <!-- PROJECT STATUS -->
         <section id="status">
 
             <p>CONTENT STATUS</p>
@@ -342,7 +358,7 @@
 
         </section>
 
-
+        <!-- OVERALL TONE -->
         <section id="tone">
 
             <p>OVERALL TONE</p>
@@ -369,9 +385,7 @@
 
                 <li>
                     <strong>Local</strong>
-                    <p>
-                        Juja and the surrounding community are central.
-                    </p>
+                    <p>Juja and the surrounding community are central.</p>
                 </li>
 
                 <li>
@@ -402,7 +416,7 @@
 
         </section>
 
-
+        <!-- CENTRAL MESSAGE -->
         <section id="central-message">
 
             <h2>
@@ -413,7 +427,7 @@
 
         </section>
 
-
+        <!-- FINAL CALL TO ACTION -->
         <section id="final-cta">
 
             <h2>Join the Movement.</h2>
@@ -423,18 +437,88 @@
                 shaping a more circular future.
             </p>
 
-            <a href="#contact">Join the Community</a>
+            <a class="button" href="#contact">Join the Community</a>
 
         </section>
 
     </main>
 
-
+    <!-- FOOTER -->
     <footer>
-        <p>
-            © 2026 Donkey Depot. Building the circular economy.
-        </p>
+        <p>© 2026 Donkey Depot. Building the circular economy.</p>
     </footer>
+
+    <!-- NAVIGATION AND FORM BEHAVIOR -->
+    <script>
+        // Mobile navigation
+        const menuButton = document.getElementById("mobileMenuToggle");
+        const navigation = document.getElementById("mainNavigation");
+
+        function closeMenu() {
+            navigation.classList.remove("nav-open");
+
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+
+            menuButton.innerHTML =
+                '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        }
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("nav-open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+                : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        });
+
+        navigation.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("click", event => {
+            if (
+                navigation.classList.contains("nav-open") &&
+                !navigation.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 1000) {
+                closeMenu();
+            }
+        });
+
+        // Contact form validation and submission notice
+        const contactForm = document.getElementById("contactForm");
+        const formStatus = document.getElementById("formStatus");
+
+        contactForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            if (!contactForm.reportValidity()) {
+                return;
+            }
+
+            formStatus.textContent =
+                "The form is ready, but message delivery has not been configured yet.";
+        });
+    </script>
 
 </body>
 </html>
