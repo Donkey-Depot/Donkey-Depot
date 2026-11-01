@@ -1098,3 +1098,206 @@ a:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+
+/* =========================================
+   MOBILE HAMBURGER NAVIGATION
+========================================= */
+
+/* Hidden on desktop */
+.mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--green-light);
+    color: var(--green-dark);
+
+    font-size: 1.35rem;
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--green-primary);
+    color: var(--white);
+}
+
+.mobile-menu-toggle:focus-visible {
+    outline: 3px solid var(--green-accent);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+
+        padding: 12px 5%;
+    }
+
+    /* Keep the logo on the left */
+    .navbar .logo {
+        width: auto;
+        max-width: calc(100% - 60px);
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .navbar .logo img {
+        flex-shrink: 0;
+    }
+
+    .brand-info {
+        min-width: 0;
+    }
+
+    .brand-info small {
+        overflow-wrap: anywhere;
+    }
+
+    /* Show the hamburger button */
+    .mobile-menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+        order: 2;
+    }
+
+    /* Collapse the navigation by default */
+    .nav-links {
+        display: none;
+        order: 3;
+
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 10px 0;
+        border-top: 1px solid var(--border);
+    }
+
+    /* Display the links when JavaScript opens the menu */
+    .nav-links.nav-open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        min-height: 44px;
+        padding: 11px 14px;
+
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+    /* Keep contact information accessible */
+    .nav-contact {
+        order: 4;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+    }
+
+    .email-link {
+        min-height: 44px;
+        overflow-wrap: anywhere;
+    }
+
+    .social-links a {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 12px 4%;
+        gap: 10px;
+    }
+
+    .navbar .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .brand-info small {
+        max-width: 240px;
+        font-size: 0.58rem;
+    }
+
+    .nav-contact {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .email-link {
+        font-size: 0.78rem;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION RESET
+========================================= */
+
+@media (min-width: 1001px) {
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
