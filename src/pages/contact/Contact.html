@@ -448,6 +448,9 @@
         <p>© 2026 Donkey Depot. Building the circular economy.</p>
     </footer>
 
+    <!-- SUPABASE JAVASCRIPT CLIENT -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <!-- NAVIGATION AND FORM BEHAVIOR -->
     <script>
         // Mobile navigation
@@ -504,19 +507,62 @@
             }
         });
 
-        // Contact form validation and submission notice
+        // SUPABASE CONNECTION
+        const SUPABASE_URL = "https://sagxlycczaqgakpohxqz.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_vzwbGIf2mzFaMeEegGDO6A_ebZ36tLx";
+
+        const supabaseClient = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+        // CONTACT FORM
         const contactForm = document.getElementById("contactForm");
         const formStatus = document.getElementById("formStatus");
+        const submitButton = document.getElementById("submitButton");
 
-        contactForm.addEventListener("submit", event => {
+        contactForm.addEventListener("submit", async (event) => {
             event.preventDefault();
 
-            if (!contactForm.reportValidity()) {
-                return;
-            }
+            if (!contactForm.reportValidity()) return;
 
-            formStatus.textContent =
-                "The form is ready, but message delivery has not been configured yet.";
+            const formData = new FormData(contactForm);
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+            formStatus.textContent = "";
+
+            try {
+                const { error } = await supabaseClient
+                    .from("website_submissions")
+                    .insert([{
+                        submission_type: "contact",
+                        name: String(formData.get("name") || "").trim(),
+                        email: String(formData.get("email") || "").trim(),
+                        reason: formData.get("reason"),
+                        message: String(formData.get("message") || "").trim()
+                    }]);
+
+                if (error) {
+                    console.error("Supabase error:", error);
+                    formStatus.textContent =
+                        "Unable to send your message. Please try again.";
+                    return;
+                }
+
+                formStatus.textContent =
+                    "Your message has been received successfully!";
+                contactForm.reset();
+
+            } catch (error) {
+                console.error("Unexpected error:", error);
+                formStatus.textContent =
+                    "Something went wrong. Please try again.";
+
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = "Send Message";
+            }
         });
     </script>
 
