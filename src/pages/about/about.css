@@ -210,15 +210,6 @@ section {
     display: flex;
     align-items: center;
 
-    background:
-        linear-gradient(
-            100deg,
-            rgba(8, 42, 23, 0.96),
-            rgba(15, 75, 38, 0.88),
-            rgba(18, 80, 43, 0.55)
-        ),
-        url("../../assets/images/environment.jpg");
-
     background-size: cover;
     background-position: center;
 
