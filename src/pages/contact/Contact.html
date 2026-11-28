@@ -511,11 +511,11 @@
         const SUPABASE_URL = "https://sagxlycczaqgakpohxqz.supabase.co";
         const SUPABASE_KEY = "sb_publishable_vzwbGIf2mzFaMeEegGDO6A_ebZ36tLx";
 
-        const supabaseClient = window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_KEY
-        );
-
+    const supabaseClient =
+    window.supabase &&
+    typeof window.supabase.createClient === "function"
+        ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+        : null;
         // CONTACT FORM
         const contactForm = document.getElementById("contactForm");
         const formStatus = document.getElementById("formStatus");
@@ -525,6 +525,11 @@
             event.preventDefault();
 
             if (!contactForm.reportValidity()) return;
+            if (!supabaseClient) {
+               formStatus.textContent =
+                 "The contact form is temporarily unavailable. Please email donkeydepot971@gmail.com directly.";
+               return;
+}
 
             const formData = new FormData(contactForm);
 
